@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body> 
+<h1>LR9_2_1 Kharlan Andrii</br></h1>
+<h1>10 elements and button</br></h1>
+<select id = "list" onchange = "isSelected()">
+
+	<option value = "1">Let`s dance</option>
+	<option value = "2">Never gonna give you up</option>
+	<option value = "3">Never gonna let you down</option>
+	<option value = "4">Never gonna</option>
+	<option value = "5">run around and desert you</option>
+	<option value = "6">Never gonna </option>
+	<option value = "7">make you cry</option>
+	<option value = "8">Never gonna </option>
+	<option value = "9">say goodbye</option>
+	<option value = "10">Never gonna tell a lie and hurt you </option>
+
+</select>
+
+<input type = "button" value = "Confirm" id = "btn" disabled = "true">
+
+</body>
+
+<script>
+
+function isSelected(){
+	var choice = document.getElementById("list");
+	var btn = document.getElementById("btn");
+	
+	if(choice[0].selected){
+		btn.setAttribute("disabled", true);	    }
+	else{
+		btn.removeAttribute("disabled");     	}
+}
+		
+</script>
+
+</html>
