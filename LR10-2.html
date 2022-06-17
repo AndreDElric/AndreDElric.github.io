@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>LR10_2 Kharlan Andrii</h2>
+
+<script>
+
+//Завдання 4
+function checkField(){
+	let pass = document.getElementById("pass").value;
+	let pass2 = document.getElementById("pass2").value;
+	let input = document.getElementById("input").value;
+	let select = document.getElementById("social");
+	
+	if(pass != "" && pass2 != "" && pass == pass2 && input != "" && select.selectedIndex != 0){
+		document.getElementById("btn").disabled = false;               	}
+}
+
+//Завдання 6
+function isPhoneNumber(){
+	var str = document.getElementById("phoneNum").value;	
+	if(!str.length)
+		alert("Not a phone number");	
+	var cellPhoneTemplate = new RegExp("[+]?((380)|(0))([356789]{2})[0-9]{7}");
+	str = str.replace(cellPhoneTemplate,"");
+	if(str != "")
+		alert("Not a phone number");
+	else
+		alert("That's a phone number");  }
+
+//Завдання 7
+function isPostalCode(){
+	var str = document.getElementById("postalCode").value;
+	
+	if(!str.length)
+		alert("Not a postal code");
+	
+	var postalTemplate = new RegExp("790((07)|(12)|(68))");
+	str = str.replace(postalTemplate,"");
+	
+	if(str != "")
+		alert("Not a postal code");
+	else
+		alert("That's a postal code");
+}
+
+//Завдання 8
+function isLvivPhone(){
+	var str = document.getElementById("lvivPhone").value;
+	
+	if(!str.length)
+		alert("Not a Lviv phone");
+	
+	var lvivPhoneTemplate = new RegExp("([(]?(032)|())[)]?[0-9]{3}[-]?[0-9]{2}[-]?[0-9]{2}");
+	str = str.replace(lvivPhoneTemplate,"");
+	
+	if(str != "")
+		alert("Not a Lviv phone");
+	else
+		alert("That's Lviv phone");
+}
+
+//Завдання 9
+function clearTextFromHTMLComments(commentsForEditing) {
+	var commentTemplate = new RegExp("[<!-->]{1,}","g");
+	return commentsForEditing.replace(commentTemplate,"");
+}
+
+//Завдання 10
+function clearTextFromHTMLTags(tagsForEditing) {
+	var tagTemplate = new RegExp("</?[pfontbrhr]{1,}>","g");
+	return tagsForEditing.replace(tagTemplate,"");
+}
+
+//Завдання 11
+function Spaces(spacesForEditing){
+	return spacesForEditing.trim();
+}
+
+//Завдання 12
+function isYear(){
+	var str = document.getElementById("year").value;	
+	if(!str.length)
+		alert("Not a year");
+	var yearTemplate = new RegExp("((19)|(20))[0-9]{2}");
+	str = str.replace(yearTemplate,"");
+	if(str != "")
+		alert("Not a year");
+	else
+		alert("That's a year");     }
+
+</script>
+
+<input type = "text" id = "pass" onkeypress = "checkField()" placeholder = "Пароль">
+<input type = "text" id = "pass2" onkeypress = "checkField()" placeholder = "Повторіть пароль">
+<input type = "text" id = "input" onkeypress = "checkField()" placeholder = "Текст">
+<select id="social" onchange = "checkField()">
+
+	<option>Виберіть мережу</option>
+	<option>Facebook</option>
+	<option>Twitter</option>
+	<option>Instagram</option>
+	<option>Telegram</option>
+
+</select>
+<button id = "btn" disabled = "true" >Send</button>
+
+<br>
+<br>
+<br>
+
+<input type = "text" id = "phoneNum" placeholder = "Введіть мобільний телефон">
+<button onclick = "isPhoneNumber()" id = "check">Check</button>
+
+<br>
+<br>
+<br>
+
+<input type = "text" id = "postalCode" placeholder = "Введіть поштовий індекс">
+<button onclick = "isPostalCode()" id = "check">Check</button>
+
+<br>
+<br>
+<br>
+
+<input type = "text" id = "lvivPhone" placeholder = "Домашній телефон у Львові">
+<button onclick = "isLvivPhone()" id = "check">Check</button>
+
+<br>
+<br>
+<br>
+
+<textarea rows="10" cols="10" id="editor">
+<!-- Simple text-->
+<!-- Simple sentence-->
+<!-- Simple-->
+</textarea >
+<input type="button" value="Clear comments" onclick="document.getElementById('editor').
+value=clearTextFromHTMLComments(document.getElementById('editor').value);" >
+
+<br>
+<br>
+<br>
+
+<textarea rows="10" cols="10" id="editor2">
+<font>No</font>
+<br> <br> 
+<br> <br>
+<p>to tags</p>
+</textarea >
+<input type="button" value="Delete tags" onclick="document.getElementById('editor2').
+value=clearTextFromHTMLTags(document.getElementById('editor2').value);" >
+
+<br>
+<br>
+<br>
+
+<input type = "text" id = "space" placeholder = "Видалити пробіли на початку та в кінці">
+<button id = "check" onclick="document.getElementById('space').
+value=Spaces(document.getElementById('space').value);">Check</button>
+
+<br>
+<br>
+<br>
+
+<input type = "text" id = "year" placeholder = "Введіть рік">
+<button onclick = "isYear()" id = "check">Check</button>
+
+</body>
+</html>
