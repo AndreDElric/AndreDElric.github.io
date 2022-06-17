@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+<h1>LR10 Kharlan Andrii</h1>
 <script>
 
-//Example1
+//Приклад 1
 function checkFields(){
 	if(document.getElementById("UN").value=="" || document.getElementById("pwd").value == "")
 		document.getElementById("send").disabled = true;
 	else
-		document.getElementById("send").disabled = false;
-}
+		document.getElementById("send").disabled = false;                       }
 
-//Example2
+//Приклад 2
 function handleSelect(){
 	var sel = document.getElementById("city");
 	if(sel.selectedIndex == 0 || sel.selectedIndex == -1)
 		document.getElementById("send2").disabled = true;
 	else
-		document.getElementById("send2").disabled = false;
-}
+		document.getElementById("send2").disabled = false;                }
 
-//Example3
+//Приклад 3
 function addToList(){
 	if(document.getElementById("newElement").value!=""){
 		var sel = document.getElementById("city");
@@ -28,46 +27,39 @@ function addToList(){
 
 		newItem.text=document.getElementById("newElement").value;
 		newItem.value=sel.options.length-1;
-		sel.add(newItem, sel.length); 
-	}
+		sel.add(newItem, sel.length);   	}
 }
 
-//Example4
+//Приклад 4
 function deleteItem(){
 	var sel = document.getElementById("city"); 
-	
 	sel.remove(sel.selectedIndex); 
-	sel.selectedIndex = 0; 
-}
+	sel.selectedIndex = 0;                        }
 
-//Example5
+//Приклад 5
 function formSubmit(){
 	if(document.getElementById("UN").value !="" && document.getElementById("pwd").value != "")
-		document.getElementById("f1").submit();
-}
+		document.getElementById("f1").submit();                   }
 
-//Task2
+//Завдання 2
 function changeStyle(){
 	var chng = document.getElementById("pass");
 	chng.style.backgroundColor = "red";
 	chng.style.color = "white";
 	chng.style.fontSize = "10pt";
-	chng.style.lineHeight = "28px";
-}
+	chng.style.lineHeight = "28px";              }
 
-//Task3
+//Завдання 3
 function chngTable(){
 	document.getElementById("tr1").style.display = "none";
-	document.getElementById("tr3").style.visibility = "hidden";
-}
+	document.getElementById("tr3").style.visibility = "hidden";                    }
 
 </script>
 </head>
 <body>
-<h1>LR10 Franchevskyy Maksym</h1>
 
-<input onkeypress = "checkFields()" type = "text" id = "UN">
-<input onkeypress = "checkFields()" type = "text" id = "pwd">
+<input onkeypress = "checkFields()" type = "text" id = "UN" placeholder = "Ім'я користувача">
+<input onkeypress = "checkFields()" type = "text" id = "pwd" placeholder = "Пароль">
 <button id = "send" disabled = "true">Send</button>
 
 <br>
@@ -94,7 +86,7 @@ function chngTable(){
 <br>
 <br>
 
-<input type = "text" id = "newElement">
+<input type = "text" id = "newElement" placeholder = "Новий елемент">
 
 <button onclick = "addToList()">Add Element</button>
 <button onclick = "deleteItem()">Delete Element</button>
@@ -105,8 +97,8 @@ function chngTable(){
 <br>
 <br>
 
-<input onkeypress = "checkFields()" type = "text" id = "UN">
-<input onkeypress = "checkFields()" type = "text" id = "pwd">
+<input onkeypress = "checkFields()" type = "text" id = "UN" placeholder = "Ім'я користувача">
+<input onkeypress = "checkFields()" type = "text" id = "pwd" placeholder = "Пароль">
 <button onclick = "formSubmit()">Send</button>
 
 <br>
@@ -115,7 +107,7 @@ function chngTable(){
 <br>
 <br>
 
-<input = "text" id = "pass">
+<input = "text" id = "pass" placeholder = "поле для вводу паролю" >
 <button id = "btn" onclick = "changeStyle()">Click</button>
 
 <br>
@@ -127,23 +119,23 @@ function chngTable(){
 <table border="1" cellspacing="0" cellpadding="5" bordercolor="#000000">
 	
 	<tr id = "tr1">
-		<td>Hello</td>
-		<td>There</td>
-		<td>General</td>
+		<td>Слава</td>
+		<td>...</td>
+		<td>Україні</td>
 	</tr>
 	<tr id = "tr2">
-		<td>Kenobi</td>
-		<td>You</td>
-		<td>Are</td>
+		<td>Glory</td>
+		<td>to</td>
+		<td>Ukraine!</td>
 	</tr>
 	<tr id = "tr3">
-		<td>A</td>
-		<td>Bold</td>
-		<td>One</td>
+		<td>Гарного</td>
+		<td>дня</td>
+		<td>Вам</td>
 	
 	</table>
 
-<button id = "btn2" onclick = "chngTable()">Change this Beautiful Table</button>
+<button id = "btn2" onclick = "chngTable()">Змінити таблицю</button>
 
 </body>
 
