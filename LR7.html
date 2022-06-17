@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<h1>LR7 Kharlan Andrii</h1>
+
+<script type = "text/javascript">
+
+function MyFunction(){
+ var textt = document.getElementById("checkdigits").value;
+ for (var i = 0; i < textt.length; i++) {
+  if (textt.charCodeAt(i) < 47 || textt.charCodeAt(i) > 57) {
+   window.alert("Це не число"); } 
+   else {
+   window.alert("Це число ");
+  }
+ }
+}
+
+function CheckEmail(){
+ str = document.getElementById("email1").value;
+ 
+ if (str.indexOf("@") == -1) {
+  window.alert("E-mail задано не правильно");
+ } else if (str.indexOf("@") != str.lastIndexOf("@")) {
+  window.alert("E-mail задано не правильно");
+ } else if (str.charAt(0) == "@" || str.charAt(str.length) == "@") {
+  window.alert("E-mail задано не правильно");
+ } else {
+  window.alert("Потрібна додаткова перевірка");
+ }
+}
+
+function MyFunction4(){
+	var text3 = document.getElementById("fraction").value;
+	if(text3.indexOf(".") == 1 || text3.indexOf(",")  == 1){
+		window.alert("Число " + text3 + " дійсне");
+	}
+	else {
+		window.alert("Число " + text3 + " не дійсне");
+	}
+}
+
+function MyFunction5(){
+	var text = document.getElementById("space").value;
+	
+	window.alert("Оригінальний текст: " + text);
+	
+	for(let i = 0; i < 10; i++){
+		text = text.replaceAll('  ', ' ');
+	}
+	
+	window.alert("Видалені пробіли: " + text);
+}
+
+function MyFunction6(){
+	var text = document.getElementById("email").value;
+	
+	window.alert("Електронна пошта: " + text);
+	
+	var ind1 = text.indexOf("@");
+	var ind2 = text.indexOf(".");
+	
+	if(ind2 != -1 && ind2 > ind1 + 1){
+		window.alert("Правильна електронна пошта");
+	}
+	else {
+		window.alert("Неправильна електронна пошта");
+	}
+}
+
+function MyFunction7(){
+	var date = new Date();
+	
+	var day = date.getDate();
+	var month = date.getMonth() + 1;
+	var year = date.getFullYear();
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	
+	var str = `${day}/${month}/${year} ${hours}:${minutes}`;
+	
+	window.alert("Поточні дата та час: " + str);
+}
+
+function MyFunction8(){
+	var date = new Date("October 9, 2002");
+	var days = ["Неділю", "Понеділок", "Вівторок", "Середу", "Четвер", "П'ятницю", "Суботу"];
+	window.alert("Я народився в " + days[date.getDay()]);
+}
+
+function MyFunction9(){
+	var date1 = new Date("October 9, 2012");
+	var date2 = new Date("October 9, 2010");
+	var date3 = new Date("October 9, 1997");
+	var date4 = new Date("October 9, 1984");
+	
+	window.alert("2012 день народження: " + date1.getDay() + "день тижня");
+	window.alert("2010 день народження: " + date2.getDay() + "день тижня");
+	window.alert("1997 день народження: " + date3.getDay() + "день тижня");
+	window.alert("1984 день народження: " + date4.getDay() + "день тижня");
+}
+
+function MyFunction10(){
+	var date = new Date("October 9, 2025");
+	
+	window.alert("2025 день народження: " + date.getDay() + "день тижня");
+}
+
+function MyFunction11(){
+	var h1 = hour1.value;
+	var m1 = minutes1.value;
+	var h2 = hour2.value;
+	var m2 = minutes2.value;
+	
+	let date1 = new Date(2022, 08, 08, h1, m1);
+	let date2 = new Date(2022, 08, 08, h2, m2);
+	
+	let difference = date1.getTime() - date2.getTime();
+	
+	if(difference < 0){
+		window.alert("Година1 має бути більша за годину2 ");
+	}
+	else {
+		difference = difference / 1000;
+		let hourDifference = Math.floor(difference / 3600);
+		difference -= hourDifference * 3600;
+		let minuteDifference = Math.floor(difference / 60);
+		difference -= minuteDifference * 60;
+		
+		window.alert(`The difference is: ${hourDifference} hours ${minuteDifference} minutes`);
+	}
+}
+
+function MyFunction12(){
+	var input = isnumber.value;
+	
+	if(isNaN(input) == 0){
+		window.alert("Число");
+	}
+	else {
+		window.alert("Не число");
+	}
+}
+
+function MyFunction13(){
+	var num = 2022 + 10 + 25;
+	
+	window.alert("День народження в десятковій системі числення: " + num);
+	window.alert("День народження в двійковій системі числення: " + num.toString(2));
+	window.alert("День народження в шістнадцятковій системі числення: " + num.toString(16));
+}
+
+function MyFunction14(){
+	var a = side1.value;
+	var b = side2.value;
+	
+	var c = Math.round(Math.sqrt(Math.pow(a,2) + Math.pow(b,2)) * 100) / 100;
+	
+	window.alert("Гіпотенуза: " + c);
+}
+
+
+
+</script>
+<input type = "text" id = "checkdigits" placeholder = "Введіть число">
+<button onclick = "MyFunction()">Приклад1</button>
+<br />
+<br />
+<input type = "text" id = "email1" placeholder = "Введіть електронну пошту">
+<button onclick = "CheckEmail()">Перевірка пошти</button>
+<br />
+<br />
+<input type = "text" id = "fraction" placeholder = "Введіть число">
+<button onclick = "MyFunction4()">Дійсне число?</button>
+<br />
+<br />
+<input type = "text" id = "space" placeholder = "Введіть текст з багатьма пробілами">
+<button onclick = "MyFunction5()">Видаляє пробіли</button>
+<br />
+<br />
+<input type = "text" id = "email" placeholder = "Введіть електронну пошту">
+<button onclick = "MyFunction6()">Перевірка пошти, краща</button>
+<br />
+<br />
+<button onclick = "MyFunction7()">Дата і час</button>
+<br />
+<br />
+<button onclick = "MyFunction8()">День народження</button>
+<br />
+<br />
+<button onclick = "MyFunction9()">День народження роки назад</button>
+<br />
+<br />
+<button onclick = "MyFunction10()">День народження в майбутньому</button>
+<br />
+<br />
+<button onclick = "MyFunction11()">Різниця часу</button>
+
+<input type = "number" min = "0" max = "24" id = "hour1" placeholder = "Перша година">
+
+<input type = "number" min = "0" max = "60" id = "minutes1" placeholder = "Перші хвилини">
+
+<input type = "number" min = "0" max = "24" id = "hour2" placeholder = "Друга година">
+
+<input type = "number" min = "0" max = "60" id = "minutes2" placeholder = "Другі хвилини">
+<br />
+<button onclick = "MyFunction12()">Число?</button>
+
+<input type = "text" id = "isnumber" placeholder = "Введіть текст або число">
+<br />
+<button onclick = "MyFunction13()">День народження в системах числення</button>
+<br />
+<button onclick = "MyFunction14()">Гіпотенуза</button>
+
+<input type = "number" id = "side1" placeholder = "Введіть сторону">
+
+<input type = "number" id = "side2" placeholder = "Введіть сторону">
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+</div>
+
+</body>
+</html>
