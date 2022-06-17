@@ -8,10 +8,8 @@ onclick = "showCustomMenu(false, event.clientX, event.clientY); return false;">
 
 function ChangeImage1(){
 	document.getElementById("myImg").src = "fire.png";                                }
-
 function ChangeImage2(){
 	document.getElementById("myImg").src = "owl.png";                                 }
-
 
 function checkSymbol(kc) {
 	if(kc < 48 || kc > 57)
@@ -21,10 +19,8 @@ function checkSymbol(kc) {
 function showCustomMenu(sign, x, y){
 	var cm = document.getElementById("custommenu");
 	
-	if(sign)
-		cm.style.visibility = 'visible';
-	else
-		cm.style.visibility = 'hidden';
+	if(sign)     cm.style.visibility = 'visible';
+	else         cm.style.visibility = 'hidden';
 	
 	cm.style.position = 'absolute';
 	cm.style.left = x + "px";
@@ -38,13 +34,13 @@ function doAction(actionType){
 		window.close();
 			break;
 		case "fontIncrease":
-			document.body.style.fontSize = "20pt";
+			document.body.style.fontSize = "12pt";
 			break;
 		case "fontDecrease":
 			document.body.style.fontSize = "8pt";
 			break;	
 		case "changeBkg":
-			document.body.style.background = "orange";
+			document.body.style.background = "green";
 			break;	}
 }
 
@@ -68,7 +64,7 @@ function deleteBorder(){
 <br />
 <br />
 
-<input type = "text" onkeypress = "return checkSymbol(event.keyCode);" placeholder = "Numbers only here">
+<input type = "text" onkeypress = "return checkSymbol(event.keyCode);" placeholder = "Numbers only">
 
 <br />
 
