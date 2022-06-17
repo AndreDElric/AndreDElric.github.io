@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body oncontextmenu = "showCustomMenu(true, event.clientX, event.clientY); return false"
+onclick = "showCustomMenu(false, event.clientX, event.clientY); return false;">
+<h1>LR8 Kharlan Andrii</h1>
+
+<script type = "text/javascript">
+
+function ChangeImage1(){
+	document.getElementById("myImg").src = "fire.png";                                }
+
+function ChangeImage2(){
+	document.getElementById("myImg").src = "owl.png";                                 }
+
+
+function checkSymbol(kc) {
+	if(kc < 48 || kc > 57)
+		return false; 
+	return true;                     }
+
+function showCustomMenu(sign, x, y){
+	var cm = document.getElementById("custommenu");
+	
+	if(sign)
+		cm.style.visibility = 'visible';
+	else
+		cm.style.visibility = 'hidden';
+	
+	cm.style.position = 'absolute';
+	cm.style.left = x + "px";
+	cm.style.top = y + "px";                    }
+
+function doAction(actionType){
+	switch(actionType){
+		case "copy":	
+			break;
+		case "close":
+		window.close();
+			break;
+		case "fontIncrease":
+			document.body.style.fontSize = "20pt";
+			break;
+		case "fontDecrease":
+			document.body.style.fontSize = "8pt";
+			break;	
+		case "changeBkg":
+			document.body.style.background = "orange";
+			break;	}
+}
+
+function setBorder(){
+	document.getElementById("custommenu").style.border = '3px solid';
+}
+
+function deleteBorder(){
+	document.getElementById("custommenu").style.border = 'hidden';
+}
+
+</script>
+
+<br />
+
+<img onmouseout = "ChangeImage1()" onmouseover = "ChangeImage2()" width = "400" height = "400" id = "myImg">
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<input type = "text" onkeypress = "return checkSymbol(event.keyCode);" placeholder = "Numbers only here">
+
+<br />
+
+<div id="custommenu" onmouseover = "setBorder()" onmouseout = "deleteBorder()" style="width: 250px; height; 80px;visibility: hidden;">
+<div style="background-Color: white; color: black; font-Size: 10pt;" onclick="doAction('copy');">Copy</div>
+<div style="background-Color: white; color: black; font-Size: 10pt;" onclick="doAction('close');">Close Window</div>
+<div style="background-Color: white; color: black; font-Size: 10pt;" onclick="doAction('fontIncrease');">Bigger font size</div>
+<div style="background-Color: white; color: black; font-Size: 10pt;" onclick="doAction('fontDecrease');">Smaller font size</div>
+<div style="background-Color: white; color: black; font-Size: 10pt;" onclick="doAction('changeBkg');">Change background color</div>
+
+</div>
+
+</body>
+</html>
