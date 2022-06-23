@@ -84,41 +84,32 @@ function MyFunction7(){
 function MyFunction8(){
 	var date = new Date("October 9, 2002");
 	var days = ["Неділю", "Понеділок", "Вівторок", "Середу", "Четвер", "П'ятницю", "Суботу"];
-	window.alert("Я народився в " + days[date.getDay()]);
-}
+	window.alert("Я народився в " + days[date.getDay()]);   }
 
 function MyFunction9(){
 	var date1 = new Date("October 9, 2012");
 	var date2 = new Date("October 9, 2010");
 	var date3 = new Date("October 9, 1997");
-	var date4 = new Date("October 9, 1984");
-	
+	var date4 = new Date("October 9, 1984");	
 	window.alert("2012 день народження: " + date1.getDay() + "день тижня");
 	window.alert("2010 день народження: " + date2.getDay() + "день тижня");
 	window.alert("1997 день народження: " + date3.getDay() + "день тижня");
-	window.alert("1984 день народження: " + date4.getDay() + "день тижня");
-}
+	window.alert("1984 день народження: " + date4.getDay() + "день тижня");      }
 
 function MyFunction10(){
-	var date = new Date("October 9, 2025");
-	
-	window.alert("2025 день народження: " + date.getDay() + "день тижня");
-}
+	var date = new Date("October 9, 2025");	
+	window.alert("2025 день народження: " + date.getDay() + "день тижня");   }
 
 function MyFunction11(){
 	var h1 = hour1.value;
 	var m1 = minutes1.value;
 	var h2 = hour2.value;
 	var m2 = minutes2.value;
-	
 	let date1 = new Date(2022, 08, 08, h1, m1);
-	let date2 = new Date(2022, 08, 08, h2, m2);
-	
-	let difference = date1.getTime() - date2.getTime();
-	
+	let date2 = new Date(2022, 08, 08, h2, m2);	
+	let difference = date1.getTime() - date2.getTime();	
 	if(difference < 0){
-		window.alert("Година1 має бути більша за годину2 ");
-	}
+		window.alert("Година1 має бути більша за годину2 ");	}
 	else {
 		difference = difference / 1000;
 		let hourDifference = Math.floor(difference / 3600);
@@ -126,37 +117,28 @@ function MyFunction11(){
 		let minuteDifference = Math.floor(difference / 60);
 		difference -= minuteDifference * 60;
 		
-		window.alert(`Різниця: ${hourDifference} hours ${minuteDifference} minutes`);
-	}
+		window.alert(`Різниця: ${hourDifference} hours ${minuteDifference} minutes`);	}
 }
 
 function MyFunction12(){
-	var input = isnumber.value;
-	
+	var input = isnumber.value;	
 	if(isNaN(input) == 0){
-		window.alert("Число");
-	}
+		window.alert("Число");	}
 	else {
-		window.alert("Не число");
-	}
+		window.alert("Не число");	}
 }
 
 function MyFunction13(){
-	var num = 2022 + 10 + 25;
-	
+	var num = 2022 + 10 + 25;	
 	window.alert("День народження в десятковій системі числення: " + num);
 	window.alert("День народження в двійковій системі числення: " + num.toString(2));
-	window.alert("День народження в шістнадцятковій системі числення: " + num.toString(16));
-}
+	window.alert("День народження в шістнадцятковій системі числення: " + num.toString(16));      }
 
 function MyFunction14(){
 	var a = side1.value;
-	var b = side2.value;
-	
-	var c = Math.round(Math.sqrt(Math.pow(a,2) + Math.pow(b,2)) * 100) / 100;
-	
-	window.alert("Гіпотенуза: " + c);
-}
+	var b = side2.value;	
+	var c = Math.round(Math.sqrt(Math.pow(a,2) + Math.pow(b,2)) * 100) / 100;	
+	window.alert("Гіпотенуза: " + c);   }
 
 
 
@@ -193,6 +175,10 @@ function MyFunction14(){
 <button onclick = "MyFunction10()">День народження в майбутньому</button>
 <br />
 <br />
+<button onclick = "MyFunction13()">День народження в системах числення</button>
+<br />
+<br />
+<br />
 <button onclick = "MyFunction11()">Різниця часу</button>
 
 <input type = "number" min = "0" max = "24" id = "hour1" placeholder = "Перша година">
@@ -203,11 +189,13 @@ function MyFunction14(){
 
 <input type = "number" min = "0" max = "60" id = "minutes2" placeholder = "Другі хвилини">
 <br />
-<button onclick = "MyFunction12()">Число?</button>
+<br />
+<br />
 
+<button onclick = "MyFunction12()">Число?</button>
 <input type = "text" id = "isnumber" placeholder = "Введіть текст або число">
 <br />
-<button onclick = "MyFunction13()">День народження в системах числення</button>
+<br />
 <br />
 <button onclick = "MyFunction14()">Гіпотенуза</button>
 
